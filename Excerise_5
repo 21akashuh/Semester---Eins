@@ -1,0 +1,71 @@
+public class ExcersieOne {
+    public static void main() {
+        FindingPrimeInteger();
+        CountingTime();
+        FindPrimeLong();
+        TimeTakenLong();
+    }
+
+    public static void FindingPrimeInteger(){
+        int flag = 0, i, j;
+        System.out.println ("The prime number between 0 to " +Integer.MAX_VALUE);
+                for (i =0; i<Integer.MAX_VALUE;i++){
+                    for (j=2; j<i;j++){
+                        if(i%j == 0){
+                            flag = 0;
+                            break;
+                        }
+                        else{
+                            flag =1;
+                        }
+                    }
+                    if (flag == 1){
+                        System.out.println(i);
+                    }
+                }
+
+
+    }
+    public static void CountingTime(){
+        long time = System.currentTimeMillis();
+        long estimate = 0;
+        long count = 0;
+        for( int i =Integer.MAX_VALUE; i < Integer.MAX_VALUE; i++){
+            count ++;
+        }
+        estimate = System.currentTimeMillis();
+        System.out.println("\n time taken is " + (estimate - time)+ "mills");
+
+    }
+    
+    public static void FindPrimeLong(){
+        int flag = 0,i,j;
+        System.out.println("The prime numbers in between 0 to long interger" + Long.MAX_VALUE);
+        for (i=0; i< Long.MAX_VALUE; i++){
+            for (j=0; j<i; j++){
+                if (i % j ==0){
+                    flag =0;
+                    break;
+                }
+                else{
+                    flag =1;
+                }
+            }
+            if (flag == 1){
+                System.out.println(i);
+            }
+        }
+    }
+    
+    public static void TimeTakenLong(){
+        long time = System.currentTimeMillis();
+        long estimate = 0;
+        long count = 0;
+        for( long i =Long.MAX_VALUE; i < Integer.MAX_VALUE; i++){
+            count ++;
+        }
+        estimate = System.currentTimeMillis();
+        System.out.println("\n time taken is " + (estimate - time)+ "mills");
+    }
+    
+}
