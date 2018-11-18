@@ -1,0 +1,93 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class UserInput {
+
+    public static void main(String[] args) {
+
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter value of n1 btw 1 to million ");
+
+        int n1=scan.nextInt();
+        while(n1<1||n1>1000000)
+        {
+            System.out.println("Make sure n1 should be btw 1 to million");
+            n1=scan.nextInt();
+        }
+
+        System.out.println("Enter value of n2 ");
+        int n2=scan.nextInt();
+
+        System.out.println("Enter value of n3");
+        int n3=scan.nextInt();
+        while(n3<=n2)
+        {
+            System.out.println(" make sure n3 is greater than n2");
+            n3=scan.nextInt();
+        }
+
+        float[] array=new float[n1];
+        array=randomnums(n1);
+
+        float sum ,prod , avg  ,largest , smallest;
+        sum=sum(array);
+        prod=product(array);
+        avg=sum/n1;
+        smallest= array[0];
+        largest=array[0];
+        for(int i=0;i<n1;i++)
+        {
+            if(array[i]<smallest)
+            {
+                smallest=array[i];
+            }
+            else if(array[i]>largest)
+            {
+                largest=array[i];
+            }
+        }
+        System.out.println("Random float numbers generated are ");
+        for(int i=0;i<n1;i++)
+        {
+            System.out.println(array[i]);
+        }
+        System.out.println("sum of random numbers is : "+ sum);
+        System.out.println("product of random numbers is : "+ prod);
+        System.out.println("average of random numbers is : "+ avg);
+        System.out.println("smallest number among random numbers :"+smallest);
+        System.out.println("largest number among random numbers :"+largest);
+
+    }
+    public static float[] randomnums(int n)
+    {
+        float[] array=new float[n];
+        for(int i=0;i<n;i++)
+        {
+            Random rand=new Random();
+            float result=rand.nextFloat();
+            array[i]=result;
+
+        }
+        return array;
+    }
+    public static float sum(float[] arr)
+    {
+        float sumofn=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sumofn += arr[i];
+        }
+        return sumofn;
+    }
+    public static float product(float[] arr)
+    {
+        float prodofn=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            prodofn = prodofn * arr[i];
+        }
+        return prodofn;
+    }
+
+
+}
